@@ -45,7 +45,6 @@ jobs:
       uses: docker/build-push-action@v3.0.0
       with:
         context: .
-        file: tensorflow/Dockerfile
         push: true
         tags: ${{ steps.meta.outputs.tags }}
 #        tags: ${{ env.DOCKER_IMAGE_NAME }}:${{ steps.version.outputs.version-without-v }}
