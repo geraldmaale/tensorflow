@@ -2,7 +2,9 @@ name: Docker Image CI
 
 on:
   push:
-    branches: [ master ]
+    # branches: [ master ]
+    tags:
+      - 'v*'
   
 env: 
   DOCKER_IMAGE_NAME: gematt/tensorflow  
