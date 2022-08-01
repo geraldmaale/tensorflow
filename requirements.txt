@@ -21,6 +21,7 @@ jupyter
 pydot 
 flwr 
 wandb
+transformers
 tensorflow_datasets 
 tensorflow_hub 
 tensorflow_text 
