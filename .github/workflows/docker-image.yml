@@ -25,7 +25,6 @@ jobs:
         name: Build and push
         uses: docker/build-push-action@v3
         with:
-          context: .
           dockerfile: Dockerfile
           push: true
           tags: gematt/tensorflow:latest
