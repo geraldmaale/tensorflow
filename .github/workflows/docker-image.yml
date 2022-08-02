@@ -2,13 +2,31 @@ name: Tensorflow CI
 
 on:
   push:
-    branches:
-      - 'master'
+#     branches:
+#       - 'master'
+    tags:
+      - "v*"
 
 jobs:
   docker:
     runs-on: ubuntu-latest
     steps:
+      - 
+        name: Checkout
+        uses: actions/checkout@v2
+      - 
+        name: Generate Docker metadata
+        id: meta
+        uses: docker/metadata-action@v3
+        with:
+          images: |
+            gematt/tensorflow
+          tags: |
+            type=ref,event=branch
+            type=semver,pattern={{version}}
+            type=semver,pattern={{major}}.{{minor}}
+          flavor: |
+            latest=true
       -
         name: Set up QEMU
         uses: docker/setup-qemu-action@v2
@@ -27,4 +45,5 @@ jobs:
         with:
           dockerfile: Dockerfile
           push: true
-          tags: gematt/tensorflow:latest
+          tags: ${{ steps.meta.outputs.tags }}
+          labels: ${{ steps.meta.outputs.labels }}
