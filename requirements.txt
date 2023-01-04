@@ -19,9 +19,24 @@ widgetsnbextension
 pandas-profiling 
 jupyter 
 pydot 
-flwr 
+flwr
+flwr[simulations]
 wandb
 transformers
+lorem
+pyglet
+multipledispatch
+mlxtend
+scikit-image
+gym
+pygame
+pylint
+h5py
+ipykernel
+networkx
+plotly
+wget
+black
 tensorflow_datasets 
 tensorflow_hub 
 tensorflow_text 
@@ -31,6 +46,9 @@ tensorflow_text
 torch 
 torchinfo 
 torchvision 
-torchaudio --extra-index-url https://download.pytorch.org/whl/cu113 
-pytorch-lightning 
-lightning-bolts
+torchaudio --extra-index-url https://download.pytorch.org/whl/cu116 
+stable-baselines3
+thop 
+torchmetrics 
+pfrl 
+dm-control 

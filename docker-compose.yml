@@ -1,15 +1,21 @@
 version: '3.6'
 services:
-  jupyter-lab:
+  nvidia:
+    image: nvidia/cuda:11.3.0-cudnn8-devel
+    container_name: nvidia-cuda
+    privileged: true
+    command: --gpus all nvidia-smi
+
+
+  developer:
     build: .
+    image: gematt/tensorflow:2.11.0
     ports:
       - "8888:8888"
     volumes:
       - ./workspaces:/workspaces
-    deploy:
-      resources:
-        reservations:
-          devices:
-            - driver: nvidia
-              count: 1
-              capabilities: [gpu]
+    environment:
+      - gpus=0
+      - NVIDIA_VISIBLE_DEVICES=all
+      - NVIDIA_DRIVER_CAPABILITIES=compute,utility
+      - runtime=nvidia

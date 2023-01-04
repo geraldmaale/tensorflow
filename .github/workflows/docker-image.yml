@@ -1,4 +1,4 @@
-name: Tensorflow CI
+name: Tensorflow & Pytorch CI
 
 on:
   push:
@@ -20,7 +20,7 @@ jobs:
         uses: docker/metadata-action@v3
         with:
           images: |
-            gematt/tensorflow
+            gematt/deeplearning
           tags: |
             type=ref,event=branch
             type=semver,pattern={{version}}
