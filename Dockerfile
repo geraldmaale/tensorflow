@@ -4,7 +4,7 @@ WORKDIR /workspaces
 
 COPY requirements.txt requirements.txt
 
-RUN conda install pytorch torchvision torchaudio pytorch-cuda=11.6 -c pytorch -c nvidia
+# RUN conda install pytorch torchvision torchaudio pytorch-cuda=11.6 -c pytorch -c nvidia
 RUN pip install --upgrade pip && pip install -r requirements.txt
 
 EXPOSE 8888

@@ -8,8 +8,8 @@ services:
 
 
   developer:
-    build: .
-    image: gematt/tensorflow:2.11.0
+    # build: .
+    image: gematt/deeplearning:2.0
     ports:
       - "8888:8888"
     volumes:
